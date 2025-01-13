@@ -5,4 +5,12 @@ describe("Random number generator", () => {
     const number = randomNumber(1, 1);
     expect(number).toBe(1);
   });
+
+  it("throws exception when min is not a number", () => {
+    expect(() => randomNumber("string", 1)).toThrow();
+  });
+
+  it("throws exception when max is not a number", () => {
+    expect(() => randomNumber(1, "string")).toThrow();
+  });
 });
