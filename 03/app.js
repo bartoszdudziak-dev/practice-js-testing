@@ -7,6 +7,10 @@ export default function randomNumber(min, max) {
     throw new TypeError("Min must be a number");
   }
 
+  if (min > max) {
+    throw new RangeError("Min must be less than max");
+  }
+
   return Math.floor(Math.random() * (min - max) + max);
 }
 
