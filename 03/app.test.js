@@ -13,4 +13,8 @@ describe("Random number generator", () => {
   it("throws exception when max is not a number", () => {
     expect(() => randomNumber(1, "string")).toThrow();
   });
+
+  it("throws exception when min is grater than max", () => {
+    expect(() => randomNumber(4, 3)).toThrow();
+  });
 });
