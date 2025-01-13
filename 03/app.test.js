@@ -17,4 +17,11 @@ describe("Random number generator", () => {
   it("throws exception when min is grater than max", () => {
     expect(() => randomNumber(4, 3)).toThrow();
   });
+
+  test("checking if a returned value is in range", () => {
+    const value = randomNumber(1, 10);
+
+    expect(value).toBeGreaterThanOrEqual(1);
+    expect(value).toBeLessThanOrEqual(10);
+  });
 });
